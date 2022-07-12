@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :trivias
-    has_many :movies, through: :trivias
+    has_many :facts
+    has_many :movies, through: :facts
 
     #has_secure_password
   
