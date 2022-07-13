@@ -1,14 +1,11 @@
-
-
 function Home({ user }) {
   if (user) {
-    return <h1>Welcome, {user.username}!</h1>;
-  } 
-  else {
-    return <h1>Please Login or Sign Up</h1>;
-  
+    return <h1 className="home">Welcome, {user.username}!</h1>;
+  } else {
+    return <div><h1 className="home">Please Login or Sign Up to find your movie site</h1>
+    <img src="https://i.giphy.com/media/kHs1lBhZWaK5rj7lt3/giphy.webp" alt="join us" className="home_signup"/>
+    </div>;
   }
-
   
 }
 
