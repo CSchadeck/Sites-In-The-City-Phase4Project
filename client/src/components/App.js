@@ -4,6 +4,7 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import NavBar from "./NavBar";
 import Home from "./Home";
+import View from "./View";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/">
               <Home user={user}/>
             </Route>
+
           </Switch>
         ) : (
           <Switch>
@@ -36,6 +38,10 @@ function App() {
             <Route path="/login">
               <Login setUser={setUser} />
             </Route>
+            <Route path="/View">
+              <View setUser={setUser} />
+            </Route>
+            
             <Route path="/">
               <Home />
             </Route>
