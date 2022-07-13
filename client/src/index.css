@@ -1,5 +1,8 @@
 body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background: url(./images/BWfilm-reel.jpg);
+  background-size: cover;
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -15,18 +18,16 @@ code {
 }
 /* NavBar */
 header {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  position: sticky;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid #ccc;
+  top: 0;
+  margin: 0 -16px;
+  padding: 16px;
+  border-bottom: 1px solid black;
 }
-.header_image {
-  margin: 1rem;
-  padding: 1rem;
-  width: 300px;
-  height: auto;
-}
-
 header a,
 header button {
   position: sticky;
@@ -40,10 +41,25 @@ header button {
   text-decoration: none;
   color: rgb(8, 8, 8);
   cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+
+}
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.header_image {
+  margin: 1rem;
+  padding: 1rem;
+  width: 300px;
+  height: auto;
 }
 
 main {
   margin: 1rem;
+  /*space between sign-upForm/Login Form from header */
 }
 
 /* form in signup and log in form */
@@ -55,6 +71,7 @@ form {
   width: 400px;
   margin: 0 auto;
   padding: 0 1rem 1rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }
 
 form input {
@@ -63,6 +80,7 @@ form input {
 
 form button[type="submit"] {
   width: 40%;
+  cursor: pointer;
 }
 
 /* HomePage */

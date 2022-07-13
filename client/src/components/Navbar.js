@@ -13,7 +13,7 @@ function NavBar({ user, setUser }) {
   return (
     <header>
       <div>
-        <Link to="/">Home</Link>   
+        <Link to="/" className="raise">Home</Link>   
       </div>
       <img className="header_image" src={image} alt="oops"></img>
 
@@ -22,9 +22,9 @@ function NavBar({ user, setUser }) {
           <button onClick={handleLogoutClick}>Logout</button>
         ) : (
           <>
-            <Link to="/View">View</Link>
-            <Link to="/signup">SignUp</Link>
-            <Link to="/login">Login</Link>
+            <Link to="/View" className="raise">View</Link>
+            <Link to="/signup" className="raise">SignUp</Link>
+            <Link to="/login" className="raise">Login</Link>
           </>
         )}
       </div>
