@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background: url(./images/BWfilm-reel.jpg);
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -20,15 +20,23 @@ header {
   align-items: center;
   border-bottom: 1px solid #ccc;
 }
+.header_image {
+  margin: 1rem;
+  padding: 1rem;
+  width: 300px;
+  height: auto;
+}
 
 header a,
 header button {
+  position: sticky;
   font-size: 1rem;
   display: inline-block;
-  background-color: #f8dd0a;
+  background-color: #dabe62;
   border: 1px solid rgb(3, 2, 2);
   margin: 1rem;
   padding: 1rem;
+  border-radius: 8px 8px 8px 8px;
   text-decoration: none;
   color: rgb(8, 8, 8);
   cursor: pointer;
@@ -40,7 +48,7 @@ main {
 
 /* form in signup and log in form */
 form {
-  background-color: #f8dd0a;
+  background-color: #dabe62;
   border: 3px solid rgb(4, 4, 4);
   display: flex;
   flex-direction: column;
@@ -57,3 +65,16 @@ form button[type="submit"] {
   width: 40%;
 }
 
+/* HomePage */
+.home {
+  color: #fff;
+  text-shadow: 1px 2px 0 #222;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 1em;
+}
+
+.home_signup {
+  display: block;
+  margin: 0 auto;
+}

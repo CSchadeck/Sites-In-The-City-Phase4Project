@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import image from "../images/Black_city_silhouette1.jpg";
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
@@ -9,13 +10,14 @@ function NavBar({ user, setUser }) {
       }
     });
   }
-
   return (
-    <header className="NavBar">
+    <header>
       <div>
-        <Link to="/">Home</Link>
+        <Link to="/">Home</Link>   
       </div>
-      <div>
+      <img className="header_image" src={image} alt="oops"></img>
+
+      <div> 
         {user ? (
           <button onClick={handleLogoutClick}>Logout</button>
         ) : (
