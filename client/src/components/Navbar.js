@@ -19,10 +19,12 @@ function NavBar({ user, setUser }) {
 
       <div> 
         {user ? (
+          
+
           <button onClick={handleLogoutClick}>Logout</button>
         ) : (
           <>
-            <Link to="/View" className="raise">View</Link>
+            {/* <Link to="/View" className="raise">View</Link> */}
             <Link to="/signup" className="raise">SignUp</Link>
             <Link to="/login" className="raise">Login</Link>
           </>
