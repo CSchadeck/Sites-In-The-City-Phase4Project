@@ -25,10 +25,13 @@ function App() {
       <main>
         {user ? (
           <Switch>
+             <Route path="/View">
+              <View setUser={setUser} />
+            </Route>
             <Route path="/">
               <Home user={user}/>
             </Route>
-
+          
           </Switch>
         ) : (
           <Switch>
@@ -38,9 +41,7 @@ function App() {
             <Route path="/login">
               <Login setUser={setUser} />
             </Route>
-            <Route path="/View">
-              <View setUser={setUser} />
-            </Route>
+           
             
             <Route path="/">
               <Home />
