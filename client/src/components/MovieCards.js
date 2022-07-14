@@ -1,23 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 
 
-function MovieCards({movCards, selectedMovie}) {
-    const {image, name, strain_id} = movCards
+function MovieCards({movCards, selectedMovie,  onDeleteMov, id, isDeleted, setIsDeleted}) {
+    const {image, name} = movCards
 
+    
 
+    function handleDelete (){
+      fetch(`/movies/${id}`, {
+          method: 'DELETE',
+        })
+        .then((r) => r.json())
+        .then(data=>{
 
+          setIsDeleted(!isDeleted)
+        })
+     }
   return (
-    // <ul className="card">
-    //   <div className="image">
-    //     <img src={image} alt={author} />
-    //   </div>
-    //   <div className="details">
-        
-    //     <strong>{name}</strong>
-    //     <span> · {name}</span>
-    //   </div>
-    // </ul>
+    <div>
+    <button className="emoji-button delete" onClick={handleDelete}>🗑 </button>
+<div>
 
     <div className="post-container" onClick={(e) => {
       selectedMovie(movCards)
@@ -27,9 +30,11 @@ function MovieCards({movCards, selectedMovie}) {
         <div className="post-overlay">
 
           <span>{name}</span>
-          <span>{strain_id}</span>
+          {/* <button className="emoji-button delete" onClick={handleDelete}>🗑 </button> */}
           </div>
       </div>
+    </div>
+    </div>
     </div>
     
   )

@@ -31,6 +31,7 @@ class MoviesController < ApplicationController
         movie = Movie.find(params[:id])
         movie.destroy
         head :no_content
+        render json: movie
 
     end
 
