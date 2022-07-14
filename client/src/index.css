@@ -1,5 +1,5 @@
 body {
-  background-repeat: no-repeat;
+
   background-attachment: fixed;
   background: url(./images/BWfilm-reel.jpg);
   background-size: cover;
@@ -27,6 +27,7 @@ header {
   margin: 0 -16px;
   padding: 16px;
   border-bottom: 1px solid black;
+  z-index: 2;
 }
 header a,
 header button {
@@ -62,7 +63,7 @@ main {
   /*space between sign-upForm/Login Form from header */
 }
 
-/* form in signup and log in form */
+/* form in sign-up and log in form */
 form {
   background-color: #dabe62;
   border: 3px solid rgb(4, 4, 4);
