@@ -3,8 +3,9 @@ import MovieCards from './MovieCards.js'
 import {BrowserRouter as useNavigate} from 'react-router-dom';
 
 
-function MovieContainer({movCards, selectedMovie}) {
+function MovieContainer({movCards, selectedMovie, setMovCards, isDeleted, setIsDeleted}) {
 
+  
   // const navigate = useNavigate();
 
 
@@ -12,8 +13,18 @@ function MovieContainer({movCards, selectedMovie}) {
        return <MovieCards 
        key ={cardsObj.id} 
        movCards={cardsObj}
-       selectedMovie={selectedMovie} />
+       selectedMovie={selectedMovie} 
+       id = {cardsObj.id}
+       isDeleted={isDeleted} 
+       setIsDeleted={setIsDeleted}
+       />
    })
+
+  //  function onDeleteMov(id){
+  //   const deletedArray = movCards.filter((cardsObj)=> cardsObj.id !== id); 
+  //   setMovCards(deletedArray)
+
+  // }
 
   return (
     <div className="content-container">
