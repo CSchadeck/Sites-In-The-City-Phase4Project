@@ -4,19 +4,19 @@ import TriviaForm from './TriviaForm'
 
 
 
-function MovieShelf({closeShelf, selectedCard,factsArray}) {
-   console.log(selectedCard)
+function MovieShelf({closeShelf, selectedCard,factsArray, isPosted, setIsPosted}) {
+//    console.log(selectedCard)
     
    const mapTrivia = factsArray.map((factsObj) => {
-    console.log(factsObj)
-        return <div className="trivia-list">
+    // console.log(factsObj)
+        return <div key={factsObj.id} className="trivia-list">
            <li>
             {factsObj.fact}</li>
             </div>
     })
 
+     
     
-    console.log(mapTrivia)
 
 
     return(
@@ -34,7 +34,7 @@ function MovieShelf({closeShelf, selectedCard,factsArray}) {
                  </div> 
                  <div className="form-section"  >
                     add Trivia 
-                    <TriviaForm/>
+                    <TriviaForm isPosted={isPosted} setIsPosted={setIsPosted} selectedCard={selectedCard}/>
                  </div> 
             </div>     
                 

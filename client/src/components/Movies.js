@@ -4,16 +4,16 @@ import MovieShelf from './MovieShelf.js'
 
 
 
-function Movies({isPosted}) {
+function Movies() {
     const [movCards, setmovCards]= useState([])
-    // const [isPosted, setIsPosted] = useState(false) 
+    const [isPosted, setIsPosted] = useState(false) 
     const [shelfOpen, setShelfOpen] = useState(false)
     const [selectedCard, setSelectedCard] = useState({})
     const [factsArray, setfactsArray] = useState([])
     useEffect(() => {
         fetch('/movies')
           .then(res=> res.json())
-          .then(movCards=>setmovCards(movCards))
+          .then((movCards)=>setmovCards(movCards))
       },[isPosted])
        
       function selectedMovie(movCards){
@@ -33,7 +33,7 @@ function Movies({isPosted}) {
     <>
     <div className="page">
         <MovieContainer movCards={movCards} selectedMovie={selectedMovie}/>
-        {shelfOpen && <MovieShelf closeShelf={closeShelf} selectedCard={selectedCard} factsArray={factsArray}/>}
+        {shelfOpen && <MovieShelf closeShelf={closeShelf} selectedCard={selectedCard} factsArray={factsArray} isPosted={isPosted} setIsPosted={setIsPosted}/>}
     </div>
    </>
   )

@@ -1,19 +1,21 @@
 import React, {useState} from 'react'
 
-function TriviaForm({setIsPosted, isPosted}) {
+function TriviaForm({setIsPosted, isPosted, selectedCard}) {
   
   const [fact, setFact] = useState('')
+
+
   
   function addedWork(e){
     e.preventDefault()
-   const fact = {fact}
-    fetch('/movies', {
+//    const fact = {fact}
+    fetch('/facts', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(fact)
+      body: JSON.stringify({fact, movie_id: selectedCard.id, user_id:1} )
       
     })
-    .then((r) => r.json())
+    // .then((r) => r.json())
     .then(setIsPosted(!isPosted))
    console.log(fact)
   }

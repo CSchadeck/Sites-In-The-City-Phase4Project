@@ -22,8 +22,8 @@ class FactsController < ApplicationController
 
     private
     def fact_params
-    params.permit(:fact )
-    # :user_id, :movie_id
+    params.permit(:fact, :user_id, :movie_id)
+   
     end 
 
 end
