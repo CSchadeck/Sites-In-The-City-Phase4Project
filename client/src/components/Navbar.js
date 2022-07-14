@@ -18,14 +18,18 @@ function NavBar({ user, setUser }) {
       <img className="header_image" src={image} alt="oops"></img>   
       <div> 
         {user ? (
+
             <div>
             <Link to="/View" className="raise">View</Link>
             
+
           <button onClick={handleLogoutClick}>Logout</button>
           </div>
         ) : (
           <>
+
            
+
             <Link to="/signup" className="raise">SignUp</Link>
             <Link to="/login" className="raise">Login</Link>
           </>
