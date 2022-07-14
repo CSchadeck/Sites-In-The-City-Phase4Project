@@ -31,17 +31,8 @@ ActiveRecord::Schema.define(version: 2022_07_11_202113) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "trivia", force: :cascade do |t|
-    t.string "trivia"
-    t.string "user_id"
-    t.string "movie_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "user_name"
-    t.string "password"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

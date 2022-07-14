@@ -15,16 +15,21 @@ function NavBar({ user, setUser }) {
       <div>
         <Link to="/" className="raise">Home</Link>   
       </div>
-      <img className="header_image" src={image} alt="oops"></img>
-
+      <img className="header_image" src={image} alt="oops"></img>   
       <div> 
         {user ? (
-          
+
+            <div>
+            <Link to="/View" className="raise">View</Link>
+            
 
           <button onClick={handleLogoutClick}>Logout</button>
+          </div>
         ) : (
           <>
-            {/* <Link to="/View" className="raise">View</Link> */}
+
+           
+
             <Link to="/signup" className="raise">SignUp</Link>
             <Link to="/login" className="raise">Login</Link>
           </>

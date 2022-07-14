@@ -13,7 +13,7 @@ function SignUp({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
+        user_name: username,
         password,
         password_confirmation: passwordConfirmation,
       }),
