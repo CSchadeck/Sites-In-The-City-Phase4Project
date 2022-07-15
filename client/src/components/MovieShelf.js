@@ -33,7 +33,7 @@ function MovieShelf({closeShelf, selectedCard,factsArray, isPosted, setIsPosted}
                     {mapTrivia}
                  </div> 
                  <div className="form-section"  >
-                    add Trivia 
+         
                     <TriviaForm isPosted={isPosted} setIsPosted={setIsPosted} selectedCard={selectedCard}/>
                  </div> 
             </div>     

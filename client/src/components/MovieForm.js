@@ -2,9 +2,18 @@ import React, {useState} from 'react'
 
 function MovieForm({moviePost, setMoviePost, closeMovieForm}) {
   
-  const [name, setName] = useState('')
+  const [name, setName] = useState()
   const [image, setImage] = useState('')
-  const [location, setLocation] = useState('')
+  const [location, setLocation] = useState()
+
+
+  function handleNameChange(e){
+    setName(e.target.value)
+  }
+
+  function handleLocationChange(e){
+    setLocation(e.target.value)
+  }
   function addedWork(e){
     e.preventDefault()
    const userWork = { name, image, location}
@@ -14,7 +23,6 @@ function MovieForm({moviePost, setMoviePost, closeMovieForm}) {
       body: JSON.stringify(userWork)
       
     })
-    .then(setMoviePost(!moviePost))
    console.log(userWork)
   }
   return (
@@ -23,10 +31,11 @@ function MovieForm({moviePost, setMoviePost, closeMovieForm}) {
          
     <form className="new-poem-form"  onSubmit ={addedWork}>
     <div className="close-movie-form" onClick={() => closeMovieForm()}> X </div>
-            <input placeholder="Name(year)" type="text" id="name" value={name} onChange= {(e)=> setName(e.target.value) } />
-            <input placeholder="Location" type="text" value={location} onChange= {(e)=> setLocation(e.target.value) } />
+
+            <textarea  id="name"  onChange= {handleNameChange} />
+            <input placeholder="Location" type="text" onChange= {handleLocationChange} />
             <textarea placeholder="Add image of location here..." type="img" value={image} onChange= {(e)=> setImage(e.target.value)} />
-            <input type="submit" value="create new movie" />
+            <input className='close-movie-form' type="submit" value="create new movie" />
     </form>
     </div>
 

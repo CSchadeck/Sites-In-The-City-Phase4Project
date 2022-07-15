@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
 
     def update
         movie = Movie.find(params[:id])
-        movie.update(updated_params)
+        movie.update!(updated_params)
         render json: movie
 
 
@@ -42,7 +42,7 @@ class MoviesController < ApplicationController
     end
 
     def updated_params
-        params.permit(:location)
+        params.permit(:location,:name)
     end
 
 

@@ -6,11 +6,11 @@ import MovieShelf from './MovieShelf.js'
 
 
 function Movies() {
-    const [movCards, setmovCards]= useState([])
+    const [movCards, setMovCards]= useState([])
     const [isPosted, setIsPosted] = useState(false) 
     const [shelfOpen, setShelfOpen] = useState(false)
     const [selectedCard, setSelectedCard] = useState({})
-    const [factsArray, setfactsArray] = useState([])
+    const [factsArray, setFactsArray] = useState([])
 
     const [formOpen, setFormOpen] = useState(false)
     const [moviePost, setMoviePost] = useState(false)
@@ -23,7 +23,7 @@ function Movies() {
     useEffect(() => {
         fetch('/movies')
           .then(res=> res.json())
-          .then((movCards)=>setmovCards(movCards))
+          .then((movCards)=> setMovCards(movCards))
       },[moviePost, isDeleted])
        
       function selectedForm(){
@@ -33,7 +33,7 @@ function Movies() {
       function selectedMovie(movCards){
        setSelectedCard(movCards)
        if(movCards.facts){
-        setfactsArray(movCards.facts)
+        setFactsArray(movCards.facts)
        }
         setShelfOpen(true);
         console.log(selectedCard)
@@ -48,15 +48,22 @@ function Movies() {
         setFormOpen(false);
       }
 
+      function handleUpdateMovie(updatedMovie) {
+        const updatedMovies = movCards.map((movie) => movie.id === updatedMovie.id ? updatedMovie : movie);
+        setMovCards(updatedMovies);
+      }
+  console.log(movCards)
+
      
 
   return (
     <>
     <div className="page">
-    <button className='Movie-Form' onClick={selectedForm}>🎥</button>
-        <MovieContainer movCards={movCards} selectedMovie={selectedMovie} setmovCards={setmovCards} isDeleted={isDeleted} setIsDeleted={setIsDeleted} />
+    <button className='movie-form-button' onClick={selectedForm}>🎥🎥🎥🎥🎥🎥  Visited A New Film Location?  🎥🎥🎥🎥🎥🎥</button>
+    {formOpen && <MovieForm moviePost = {moviePost} setMoviePost={setMoviePost} closeMovieForm={closeMovieForm}/>}
+        <MovieContainer movCards={movCards} selectedMovie={selectedMovie} setMovCards={setMovCards} isDeleted={isDeleted} setIsDeleted={setIsDeleted} handleUpdateMovie={handleUpdateMovie}/>
         {/* <button className='Movie-Form' onClick={selectedForm}>🎥</button> */}
-        {formOpen && <MovieForm moviePost = {moviePost} setMoviePost={setMoviePost} closeMovieForm={closeMovieForm}/>}
+     
         {shelfOpen && <MovieShelf closeShelf={closeShelf} selectedCard={selectedCard} factsArray={factsArray} isPosted={isPosted} setIsPosted={setIsPosted}/>}
     </div>
    </>
