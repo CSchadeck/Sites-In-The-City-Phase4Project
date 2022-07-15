@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image from "../images/Black_city_silhouette1.jpg";
+import image from "../images/cityskyline.jpg";
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
@@ -12,20 +12,18 @@ function NavBar({ user, setUser }) {
   }
   return (
     <header>
+      <img className="header_image" src={image} alt="oops"></img>
       <div>
-        <Link to="/" className="raise">Home</Link>   
+        <Link to="/" className="raise">Home</Link>
       </div>
-      <img className="header_image" src={image} alt="oops"></img>   
-      <div> 
+      <div>
         {user ? (
-            <div>
+          <div>
             <Link to="/View" className="raise">View</Link>
-            
-          <button onClick={handleLogoutClick}>Logout</button>
+            <button onClick={handleLogoutClick}>Logout</button>
           </div>
         ) : (
           <>
-           
             <Link to="/signup" className="raise">SignUp</Link>
             <Link to="/login" className="raise">Login</Link>
           </>

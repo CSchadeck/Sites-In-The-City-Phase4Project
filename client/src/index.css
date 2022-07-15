@@ -19,15 +19,25 @@ code {
 /* NavBar */
 header {
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  /* background-image: url(./images/cityskyline.jpg); */
+  /* background-position: 50% 50%; */
   position: sticky;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   top: 0;
-  margin: 0 -16px;
   padding: 16px;
   border-bottom: 1px solid black;
   z-index: 2;
+  overflow: hidden;
+}
+.header_image {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  mix-blend-mode: screen;
+  opacity: .8;
+  object-fit: cover;
 }
 header a,
 header button {
@@ -51,12 +61,12 @@ header button {
   transform: translateY(-0.25em);
 }
 
-.header_image {
+/* .header_image {
   margin: 1rem;
   padding: 1rem;
   width: 300px;
   height: auto;
-}
+} */
 
 main {
   margin: 1rem;
@@ -98,11 +108,21 @@ form button[type="submit"] {
   margin: 0 auto;
 }
 
+/* Movies Componant*/
+
+.movie-form-button {
+  font-size: 30px;
+  width: 885px;
+  height: 36px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
 /*Movie cards */
 
 .post-container {
   margin: 15px;
-
+margin-bottom: 0;
   position: relative;
 
 
@@ -111,13 +131,10 @@ form button[type="submit"] {
 .post-image {
   width: 300px;
   height: 300px;
-
   display: block;
-
   background-position: center;
   background-size: cover;
 
-  
 }
 
 .post-image:hover{
@@ -244,5 +261,20 @@ object-fit: cover;
   display: grid;
 
   grid-template-columns: auto auto auto;
+}
 
+.content-container {
+  position: relative;
+  margin-left: -07%;
+}
+
+.emoji-button-patch, .emoji-button-delete {
+  margin-left: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  
+}
+/* Movie Form */
+.close-movie-form {
+  cursor:pointer;
 }

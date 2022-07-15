@@ -15,6 +15,8 @@ function Login({ setUser }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
+      } else {
+        alert('Invalid Username or PasswordS');
       }
     });
   }

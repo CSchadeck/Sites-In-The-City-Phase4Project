@@ -26,7 +26,7 @@ function MovieForm({moviePost, setMoviePost, closeMovieForm}) {
             <input placeholder="Name(year)" type="text" id="name" value={name} onChange= {(e)=> setName(e.target.value) } />
             <input placeholder="Location" type="text" value={location} onChange= {(e)=> setLocation(e.target.value) } />
             <textarea placeholder="Add image of location here..." type="img" value={image} onChange= {(e)=> setImage(e.target.value)} />
-            <input type="submit" value="create new movie" />
+            <input className='close-movie-form' type="submit" value="create new movie" />
     </form>
     </div>
 
