@@ -3,19 +3,23 @@ import UpdateForm from './UpdateForm';
 
 
 
-function MovieCards({movCards, selectedMovie,  onDeleteMov, id, isDeleted, setIsDeleted, handleUpdateMovie, setMovCards}) {
+function MovieCards({movCards, selectedMovie, id, isDeleted, setIsDeleted, handleUpdateMovie}) {
     // const {image, name, location} = movCards;
     const [name, setName] = useState('')
-  const [image, setImage] = useState('')
+  // const [image, setImage] = useState('')
   const [location, setLocation] = useState('')
   const [updateOpen, setUpdate] = useState(false)
+
+  console.log(name, location)
 
     function handlePatch() {
       fetch(`/movies/${id}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ image: movCards.image, name: movCards.name, location: movCards.location})
-      }).then(r => r.json())
+          body: JSON.stringify({ 
+            name: name, 
+            location: location})
+          }).then(r => r.json())
           .then((data) => {
               console.log(data);
               
@@ -38,14 +42,14 @@ setUpdate(false)
           method: 'DELETE',
         })
         .then((r) => r.json())
-        .then(data=>{
+        .then(()=>{
 
           setIsDeleted(!isDeleted)
         })
      }
   return (
     <div>
-      <div>{updateOpen && <UpdateForm image={movCards.image} name={movCards.name} location={movCards.location} setImage={setImage} setName={setName} setLocation={setLocation} handlePatch={handlePatch} closeUpdate={closeUpdate} />}</div>
+      <div>{updateOpen && <UpdateForm imageD={movCards.image} nameD={movCards.name} locationD={movCards.location} setName={setName} setLocation={setLocation} handlePatch={handlePatch} closeUpdate={closeUpdate} name={name} location={location} />}</div>
        
 <div>
 
